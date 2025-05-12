@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Monkey Mashup</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #003300; /* Navy green background */
+            color: #FFFFFF;
+            text-align: center;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+
+        nav {
+            background-color: #1E1E1E;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: #FFC107;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            color: #FFA000;
+        }
+
+        header {
+            padding: 30px 0;
+            background-color: #1E1E1E;
+        }
+
+        header img {
+            width: 150px;
+        }
+
+        h1 {
+            margin: 20px 0 10px;
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 20px 10px;
+            line-height: 1.6;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px 0;
+            background-color: #1E1E1E;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -50px;
+            width: 20px;
+            height: 20px;
+            background-color: #004d00; /* Dark green bubbles */
+            border-radius: 50%;
+            animation: rise 5s infinite ease-in;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(0.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="credits.html">Credits</a>
+    </nav>
+
+    <header>
+        <img src="logo.png" alt="Monkey Mashup Logo">
+        <h1>About Monkey Mashup</h1>
+    </header>
+
+    <main>
+        <p>
+            Monkey Mashup is a thrilling VR game designed to immerse players in a vibrant jungle environment where the laws of the wild dictate every move. In this exhilarating experience, you take on the role of a mischievous monkey navigating through dense foliage, swinging from vines, and engaging in chaotic, high-energy challenges. The game combines the excitement of exploration with fast-paced action, offering a unique blend of gameplay that keeps you on your toes at all times.
+        </p>
+
+        <p>
+            The game’s world is brought to life with stunning visuals and dynamic soundscapes, creating an atmosphere that feels both alive and untamed. You’ll encounter unpredictable obstacles, hidden treasures, and interactive elements that test your reflexes and problem-solving skills. Monkey Mashup encourages creativity and adaptability, as players must think on their feet to overcome challenges while enjoying the freedom of movement that VR offers. Whether you're swinging through the jungle or solving puzzles to unlock secrets, every moment feels like an adventure.
+        </p>
+
+        <p>
+            One of the standout features of Monkey Mashup is its multiplayer mode, which allows players to compete or collaborate with friends in a variety of fun and chaotic mini-games. From racing through treetop courses to collecting bananas in a limited timeframe, the multiplayer challenges add an extra layer of excitement to the game. With easy-to-learn controls and gameplay mechanics that are both accessible and rewarding, Monkey Mashup is perfect for players of all skill levels, ensuring that everyone can join in on the fun.
+        </p>
+
+        <p>
+            Whether you're looking for a casual escape into a lush jungle or an intense gaming session full of surprises, Monkey Mashup delivers an unforgettable experience. It’s more than just a game—it’s an adventure that brings out the playful side in everyone. Get ready to unleash your inner monkey and dive into the wild world of Monkey Mashup!
+        </p>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Monkey Mashup. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function createBubble() {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            bubble.style.left = Math.random() * window.innerWidth + 'px';
+            bubble.style.width = bubble.style.height = Math.random() * 30 + 20 + 'px';
+            document.body.appendChild(bubble);
+            bubble.addEventListener('animationend', () => bubble.remove());
+        }
+        setInterval(createBubble, 500);
+    </script>
+</body>
+</html>

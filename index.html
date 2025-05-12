@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monkey Mashup</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #003300; /* Navy green background */
+            color: #FFFFFF;
+            text-align: center;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+
+        nav {
+            background-color: #1E1E1E;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: #FFC107;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            color: #FFA000;
+        }
+
+        header {
+            padding: 50px 0;
+        }
+
+        header img {
+            width: 200px;
+        }
+
+        h1 {
+            margin: 20px 0 10px;
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .cta {
+            margin: 30px 0;
+        }
+
+        .cta button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #FFC107;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cta button:hover {
+            background-color: #FFA000;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px 0;
+            background-color: #1E1E1E;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -50px;
+            width: 20px;
+            height: 20px;
+            background-color: #004d00; /* Dark green bubbles */
+            border-radius: 50%;
+            animation: rise 5s infinite ease-in;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(0.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="credits.html">Credits</a>
+    </nav>
+
+    <header>
+        <img src="logo.png" alt="Monkey Mashup Logo">
+        <h1>Welcome to Monkey Mashup!</h1>
+        <p>The most exciting VR game experience awaits you. Get ready to swing through the jungle!</p>
+    </header>
+
+    <main>
+        <div class="cta">
+            <button onclick="alert('Coming Soon! Stay tuned for the launch!')">Learn More</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Monkey Mashup. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function createBubble() {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            bubble.style.left = Math.random() * window.innerWidth + 'px';
+            bubble.style.width = bubble.style.height = Math.random() * 30 + 20 + 'px';
+            document.body.appendChild(bubble);
+            bubble.addEventListener('animationend', () => bubble.remove());
+        }
+        setInterval(createBubble, 500);
+    </script>
+</body>
+</html>
